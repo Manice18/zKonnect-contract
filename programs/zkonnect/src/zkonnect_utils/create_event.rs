@@ -1,7 +1,6 @@
 use anchor_lang::prelude::*;
 use anchor_spl::{
-    associated_token::AssociatedToken,
-    token_interface::{Mint, TokenInterface},
+    associated_token::AssociatedToken, token_interface::{Mint, TokenInterface}
 };
 
 use crate::states::Event;
@@ -16,7 +15,7 @@ pub struct CreateEvent<'info> {
     )]
     pub mint: InterfaceAccount<'info, Mint>,
     #[account(mut)]
-    pub collection_nft: SystemAccount<'info>,
+    pub collection_nft: InterfaceAccount<'info, Mint>,
     #[account(
         init, 
         payer = creator, 
