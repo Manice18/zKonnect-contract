@@ -9,7 +9,7 @@ pub use states::*;
 pub mod zkonnect_utils;
 pub use zkonnect_utils::*;
 
-declare_id!("LF3zzGufxyKgfVWtMmDiK7B7j4kaxmaGy8dU6mnyPNM");
+declare_id!("Cse1J9Q4QkfCtjTN9629PgCbTzfug4xfSoKExL83aANh");
 
 #[program]
 pub mod zkonnect {
@@ -69,6 +69,12 @@ pub mod zkonnect {
         for byte in data.deref_mut().iter_mut() {
             *byte = 0;
         }
+
+        // let dst: &mut [u8] = &mut data;
+        // let mut cursor = std::io::Cursor::new(dst);
+        // cursor
+        //     .write_all(&anchor_lang::__private::CLOSED_ACCOUNT_DISCRIMINATOR)
+        //     .unwrap();
 
         Ok(())
     }
